@@ -45,4 +45,6 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - say-hello
-      - say-hello-japan
+      - say-hello-japan:
+          requires:
+            - say-hello
