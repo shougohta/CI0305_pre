@@ -10,7 +10,8 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - run: echo "mkdir -p workspace && touch workspace/file.txt"
+      - named: one
+      - command: "mkdir -p workspace && touch workspace/file.txt"
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
           root: workspace
@@ -22,7 +23,8 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - run: echo "ls /temp/workspace/file/txt"  
+      - name: two
+      - command: "ls /temp/workspace/file/txt"  
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: workspace
