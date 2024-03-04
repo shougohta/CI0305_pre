@@ -16,7 +16,7 @@ jobs:
           root: workspace
           # Must be relative path from root
           paths:
-            - file.txt
+            - workspace/file.txt"
   two:
     docker:
       - image: circleci/ruby:2.4.1
