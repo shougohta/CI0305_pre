@@ -16,7 +16,7 @@ jobs:
           root: workspace
           # Must be relative path from root
           paths:
-            - echo-output      
+            - file.txt
   two:
     docker:
       - image: circleci/ruby:2.4.1
@@ -25,7 +25,7 @@ jobs:
       - run: echo "ls /temp/workspace/file/txt"  
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: my_workspace
+          at: workspace
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
